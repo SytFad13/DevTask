@@ -1,6 +1,6 @@
 ﻿namespace App.DataAccess.Components.Responses
 {
-	public class GetEmployeesByIdResponse
+	public class GetEmployeesByDepartmentIdResponse
 	{
 		public int? DepartmentId { get; set; }
 		public string DepartmentName { get; set; }

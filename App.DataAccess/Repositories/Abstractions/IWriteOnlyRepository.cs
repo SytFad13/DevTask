@@ -5,6 +5,6 @@ namespace App.DataAccess.Repositories.Abstractions
 {
     public interface IWriteOnlyRepository
     {
-        Task<IQueryable<Employee>> MoveEmployeesInNewDepartment(MoveEmployeesToNewDepartmentRequest request);
+        Task<ICollection<Employee>> MoveEmployeesInNewDepartment(MoveEmployeesToNewDepartmentRequest request);
     }
 }

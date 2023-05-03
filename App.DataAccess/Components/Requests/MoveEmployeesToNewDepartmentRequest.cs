@@ -3,11 +3,10 @@ using MediatR;
 
 namespace App.DataAccess.Components.Requests
 {
-    public class MoveEmployeesToNewDepartmentRequest : IRequest<IQueryable<MoveEmployeesToNewDepartmentResponse>>
+    public class MoveEmployeesToNewDepartmentRequest : IRequest<ICollection<MoveEmployeesToNewDepartmentResponse>>
     {
         public int ExistingDepartmentId { get; set; }
         public string Name { get; set; }
         public static DateTime? CreatedDate => DateTime.Now;
-
     }
 }

@@ -5,7 +5,7 @@ using MediatR;
 
 namespace App.DataAccess.Components.Handlers
 {
-    public class MoveEmployeesToNewDepartmentHandler : IRequestHandler<MoveEmployeesToNewDepartmentRequest, IQueryable<MoveEmployeesToNewDepartmentResponse>>
+    public class MoveEmployeesToNewDepartmentHandler : IRequestHandler<MoveEmployeesToNewDepartmentRequest, ICollection<MoveEmployeesToNewDepartmentResponse>>
     {
         private readonly IWriteOnlyRepository _writeOnlyRepository;
 
@@ -14,7 +14,7 @@ namespace App.DataAccess.Components.Handlers
             _writeOnlyRepository = writeOnlyRepository;
         }
 
-        public async Task<IQueryable<MoveEmployeesToNewDepartmentResponse>> Handle(MoveEmployeesToNewDepartmentRequest request, CancellationToken cancellationToken)
+        public async Task<ICollection<MoveEmployeesToNewDepartmentResponse>> Handle(MoveEmployeesToNewDepartmentRequest request, CancellationToken cancellationToken)
         {
             var movedEmployeesModel = await _writeOnlyRepository.MoveEmployeesInNewDepartment(request);
 
@@ -26,7 +26,7 @@ namespace App.DataAccess.Components.Handlers
                 DepartmentId = x.DepartmentId,
             });
 
-            return movedEmployees;
+            return movedEmployees.ToList();
         }
     }
 }

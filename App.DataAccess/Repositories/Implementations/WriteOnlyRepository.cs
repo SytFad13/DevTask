@@ -2,24 +2,28 @@
 using App.DataAccess.Repositories.Abstractions;
 using App.Domain.Models;
 using App.Persistence.Context;
-using Microsoft.EntityFrameworkCore;
 
 namespace App.DataAccess.Repositories.Implementations
 {
-    public class WriteOnlyRepository : IWriteOnlyRepository
-    {
-        private readonly AppDbContext _dbContext;
+	public class WriteOnlyRepository : IWriteOnlyRepository
+	{
+		private readonly AppDbContext _dbContext;
 
-        public WriteOnlyRepository(AppDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
-
-		public async Task<IQueryable<Employee>> MoveEmployeesInNewDepartment(MoveEmployeesToNewDepartmentRequest request)
+		public WriteOnlyRepository(AppDbContext dbContext)
 		{
-            try
-            {
-				var existingDepartment = _dbContext.Departments.Single(x => x.Id == request.ExistingDepartmentId);
+			_dbContext = dbContext;
+		}
+
+		public async Task<ICollection<Employee>> MoveEmployeesInNewDepartment(MoveEmployeesToNewDepartmentRequest request)
+		{
+			try
+			{
+				var existingDepartment = _dbContext.Departments.SingleOrDefault(x => x.Id == request.ExistingDepartmentId);
+				
+				if (existingDepartment == null)
+				{
+					return new List<Employee>();
+				}
 
 				var parentDepartment = _dbContext.Departments.SingleOrDefault(x => x.Id == existingDepartment.ParentId);
 
@@ -40,9 +44,9 @@ namespace App.DataAccess.Repositories.Implementations
 
 				await _dbContext.SaveChangesAsync();
 
-				return employees;
+				return employees.ToList();
 			}
-            catch (Exception ex)
+			catch (Exception ex)
 			{
 				throw new Exception(ex.Message);
 			}

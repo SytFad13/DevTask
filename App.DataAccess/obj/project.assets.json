@@ -3118,23 +3118,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\saba.maglakelidze\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Saba\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\saba.maglakelidze\\Desktop\\TaskApi\\App.DataAccess\\App.DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\Saba\\Desktop\\DeveloperAssignment\\App.DataAccess\\App.DataAccess.csproj",
       "projectName": "App.DataAccess",
-      "projectPath": "C:\\Users\\saba.maglakelidze\\Desktop\\TaskApi\\App.DataAccess\\App.DataAccess.csproj",
-      "packagesPath": "C:\\Users\\saba.maglakelidze\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\saba.maglakelidze\\Desktop\\TaskApi\\App.DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\Saba\\Desktop\\DeveloperAssignment\\App.DataAccess\\App.DataAccess.csproj",
+      "packagesPath": "C:\\Users\\Saba\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Saba\\Desktop\\DeveloperAssignment\\App.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\saba.maglakelidze\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Saba\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3148,11 +3144,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\saba.maglakelidze\\Desktop\\TaskApi\\App.Domain\\App.Domain.csproj": {
-              "projectPath": "C:\\Users\\saba.maglakelidze\\Desktop\\TaskApi\\App.Domain\\App.Domain.csproj"
+            "C:\\Users\\Saba\\Desktop\\DeveloperAssignment\\App.Domain\\App.Domain.csproj": {
+              "projectPath": "C:\\Users\\Saba\\Desktop\\DeveloperAssignment\\App.Domain\\App.Domain.csproj"
             },
-            "C:\\Users\\saba.maglakelidze\\Desktop\\TaskApi\\App.Persistence\\App.Persistence.csproj": {
-              "projectPath": "C:\\Users\\saba.maglakelidze\\Desktop\\TaskApi\\App.Persistence\\App.Persistence.csproj"
+            "C:\\Users\\Saba\\Desktop\\DeveloperAssignment\\App.Persistence\\App.Persistence.csproj": {
+              "projectPath": "C:\\Users\\Saba\\Desktop\\DeveloperAssignment\\App.Persistence\\App.Persistence.csproj"
             }
           }
         }
@@ -3187,7 +3183,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

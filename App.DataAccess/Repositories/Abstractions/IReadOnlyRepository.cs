@@ -5,7 +5,7 @@ namespace App.DataAccess.Repositories.Abstractions
 {
 	public interface IReadOnlyRepository
 	{
-		Task<ICollection<EmployeeWithDepartmentReadModel>> GetEmployeesById(GetEmployeesByIdRequest request);
+		Task<ICollection<EmployeeWithDepartmentReadModel>> GetEmployeesByDepartmentId(GetEmployeesByDepartmentIdRequest request);
 		Task<ICollection<EmployeeWithDepartmentReadModel>> GetEmployeesByPart(GetEmployeesByPartRequest request);
 	}
 }

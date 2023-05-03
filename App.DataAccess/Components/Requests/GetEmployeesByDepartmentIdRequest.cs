@@ -3,7 +3,7 @@ using MediatR;
 
 namespace App.DataAccess.Components.Requests
 {
-	public class GetEmployeesByIdRequest : IRequest<ICollection<GetEmployeesByIdResponse>>
+	public class GetEmployeesByDepartmentIdRequest : IRequest<ICollection<GetEmployeesByDepartmentIdResponse>>
 	{
 		public int DepartmentId { get; set; }
 	}

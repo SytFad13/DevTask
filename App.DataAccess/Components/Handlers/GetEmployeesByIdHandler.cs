@@ -5,7 +5,7 @@ using MediatR;
 
 namespace App.DataAccess.Components.Handlers
 {
-	public class GetEmployeesByIdHandler : IRequestHandler<GetEmployeesByIdRequest, ICollection<GetEmployeesByIdResponse>>
+	public class GetEmployeesByIdHandler : IRequestHandler<GetEmployeesByDepartmentIdRequest, ICollection<GetEmployeesByDepartmentIdResponse>>
 	{
         private readonly IReadOnlyRepository _readRepository;
 
@@ -14,11 +14,11 @@ namespace App.DataAccess.Components.Handlers
             _readRepository = readOnlyRepository;
         }
 
-        public async Task<ICollection<GetEmployeesByIdResponse>> Handle(GetEmployeesByIdRequest request, CancellationToken cancellationToken)
+        public async Task<ICollection<GetEmployeesByDepartmentIdResponse>> Handle(GetEmployeesByDepartmentIdRequest request, CancellationToken cancellationToken)
         {
-            var employeesWithDepartmentModel = await _readRepository.GetEmployeesById(request);
+            var employeesWithDepartmentModel = await _readRepository.GetEmployeesByDepartmentId(request);
 
-            var employeesWithDepartment = employeesWithDepartmentModel.Select(x => new GetEmployeesByIdResponse()
+            var employeesWithDepartment = employeesWithDepartmentModel.Select(x => new GetEmployeesByDepartmentIdResponse()
             {
                 EmployeeId = x.EmployeeId,
                 FirstName = x.FirstName,

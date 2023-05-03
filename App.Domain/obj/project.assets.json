@@ -8,23 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\saba.maglakelidze\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Saba\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\saba.maglakelidze\\Desktop\\TaskApi\\App.Domain\\App.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Saba\\Desktop\\DeveloperAssignment\\App.Domain\\App.Domain.csproj",
       "projectName": "App.Domain",
-      "projectPath": "C:\\Users\\saba.maglakelidze\\Desktop\\TaskApi\\App.Domain\\App.Domain.csproj",
-      "packagesPath": "C:\\Users\\saba.maglakelidze\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\saba.maglakelidze\\Desktop\\TaskApi\\App.Domain\\obj\\",
+      "projectPath": "C:\\Users\\Saba\\Desktop\\DeveloperAssignment\\App.Domain\\App.Domain.csproj",
+      "packagesPath": "C:\\Users\\Saba\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Saba\\Desktop\\DeveloperAssignment\\App.Domain\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\saba.maglakelidze\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Saba\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -64,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

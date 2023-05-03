@@ -15,17 +15,13 @@ namespace App.DataAccess.Repositories.Implementations
             _dbContext = dbContext;
         }
 
-        public async Task<ICollection<EmployeeWithDepartmentReadModel>> GetEmployeesById(GetEmployeesByIdRequest request)
+        public async Task<ICollection<EmployeeWithDepartmentReadModel>> GetEmployeesByDepartmentId(GetEmployeesByDepartmentIdRequest request)
         {
             try
             {
-                var employees = await GetEmployees();
-
-                var departments = await GetDepartments();
-
-                var employeesWithDepartment = from department in departments
+                var employeesWithDepartment = from department in await _dbContext.Departments.AsNoTracking().ToListAsync()
                                               where (department.Id == request.DepartmentId) || (department.ParentId == request.DepartmentId)
-                                              join employee in employees
+                                              join employee in await _dbContext.Employees.AsNoTracking().ToListAsync()
                                               on department.Id equals employee.DepartmentId
                                               select new EmployeeWithDepartmentReadModel()
                                               {
@@ -48,12 +44,8 @@ namespace App.DataAccess.Repositories.Implementations
         {
             try
             {
-                var employees = await GetEmployees();
-
-                var departments = await GetDepartments();
-
-                var employeesWithDepartment = from employee in employees
-                                              join department in departments
+                var employeesWithDepartment = from employee in await _dbContext.Employees.AsNoTracking().ToListAsync()
+                                              join department in await _dbContext.Departments.AsNoTracking().ToListAsync()
                                               on employee.DepartmentId equals department.Id
                                               into employeeWithDepartment
                                               from dep in employeeWithDepartment.DefaultIfEmpty()
@@ -73,16 +65,6 @@ namespace App.DataAccess.Repositories.Implementations
             {
                 throw new Exception(ex.Message);
             }
-        }
-
-        public async Task<ICollection<Employee>> GetEmployees()
-        {
-            return await _dbContext.Employees.AsNoTracking().ToListAsync();
-        }
-
-        public async Task<ICollection<Department>> GetDepartments()
-        {
-            return await _dbContext.Departments.AsNoTracking().ToListAsync();
         }
     }
 }
